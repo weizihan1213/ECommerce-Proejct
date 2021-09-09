@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
 
     <script type="text/javascript">
       const user = '{{request.user}}'
@@ -78,7 +80,7 @@
             </li>
 
             <li class="nav-item active">
-              <a class="nav-link" href="#">Product <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'store' %}">Product <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item active">
@@ -94,8 +96,9 @@
               <p id="cart-total">{{cartItems}}</p>
           </div>
         </div>
-      </nav>
-    
+    </nav>
+    <div class="spot"></div>
+  
     <div class="container">
         <br>
         {% block content %}

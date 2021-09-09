@@ -37,6 +37,14 @@ def cart(request):
     return render(request, 'store/cart.html', context)
 
 
+def productDetail(request, id):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    product = Product.objects.get(id=id)
+    context = {'product': product, 'cartItems': cartItems}
+    return render(request, 'store/productDetail.html', context)
+
+
 def updateItem(request):
     data = json.loads(request.body)
     productId = data['productId']

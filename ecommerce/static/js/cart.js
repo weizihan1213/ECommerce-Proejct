@@ -1,12 +1,33 @@
 const updateBtns = document.getElementsByClassName("update-cart");
+const viewBtns = document.getElementsByClassName("btn-view");
+const select = document.getElementById("select-size");
+const navbar = document.querySelector(".navbar");
+const spot = document.querySelector(".spot");
+
+// handler
+const handleScroll = (entries) => {
+  const spotIsVisible = entries[0].isIntersecting;
+  if (spotIsVisible) navbar.classList.remove("fixed-top");
+  else navbar.classList.add("fixed-top");
+};
+
+// options
+const options = {
+  root: null, // null means that root element = browser viewport.
+  rootMargin: "0px", // margin around the browser viewport.
+  threshhold: 0, // see below what 0 means.
+};
+
+// initialize and start the observer
+const observer = new IntersectionObserver(handleScroll, options);
+observer.observe(spot);
 
 for (let i = 0; i < updateBtns.length; i++) {
   updateBtns[i].addEventListener("click", function () {
     const productId = this.dataset.product;
     const action = this.dataset.action;
+    const selectedVal = select.options[select.selectedIndex].value;
     console.log("productId: ", productId, "Action: ", action);
-
-    console.log("USER:", user);
 
     if (user == "AnonymousUser") {
       addCookieItem(productId, action);

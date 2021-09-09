@@ -120,6 +120,7 @@
 
     <script type="text/javascript">
         const shipping = '{{order.shipping}}'
+        const cartItems = '{{cartItems}}'
         const totalPrice = '{{order.cart_total_price|floatformat:2}}'
 
         const userInfo = document.getElementById('user-info')
@@ -127,7 +128,9 @@
         const formWrapper = document.getElementById('form-wrapper')
         const makePayment = document.getElementById('make-payment')
         const paymentInfo = document.getElementById('payment-info')
+        // const formButton = document.getElementById('form-button')
         csrftoken = form.getElementsByTagName('input')[0].value
+
 
         function submitFormData() {
 
@@ -175,6 +178,13 @@
             })
         }
 
+        if(cartItems == 0){
+            document.getElementById('form-button').setAttribute('disabled', 'disabled');
+        } else {
+            document.getElementById('form-button').removeAttribute('disabled');
+        }
+
+
         if(shipping == 'False'){
             document.getElementById('shipping-info').innerHTML = ''
         }
@@ -185,7 +195,7 @@
 
         if(shipping === 'False' && user !== 'AnonymousUser'){
             // Hide the entire from if the user is logged in and shipping is false
-            formWrapper.classList.add('hidden')
+            formWrapper.classList.add('hidden');
 
             paymentInfo.classList.remove('hidden');
         }

@@ -13,6 +13,11 @@ h6 {
   color: hsl(0, 0%, 30%);
 }
 
+.navbar.fixed-top {
+  position: fixed;
+  top: 0;
+}
+
 .navbar-brand {
   font-weight: 600;
   font-size: 25px;
@@ -116,4 +121,26 @@ h6 {
 
 .hidden {
   display: none !important;
+}
+
+/* productDetail.html */
+.container {
+  margin-top: 80px;
+}
+
+.item-name {
+  margin-top: 30px;
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.item-price {
+  font-size: 25px;
+}
+
+.form-button:disabled {
+  background: #999;
+  color: #555;
+  cursor: not-allowed;
 }
