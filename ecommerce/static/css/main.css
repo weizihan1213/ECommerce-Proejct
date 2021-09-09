@@ -1,4 +1,6 @@
 body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   background-color: hsl(0, 0%, 98%);
 }
 
@@ -9,6 +11,19 @@ h4,
 h5,
 h6 {
   color: hsl(0, 0%, 30%);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.navbar-brand span {
+  color: #f9ca24;
+}
+
+.nav-item {
+  padding-left: 20px;
 }
 
 .box-element {
@@ -60,6 +75,7 @@ h6 {
 
 .btn {
   border-radius: 0;
+  border-radius: 20px;
 }
 
 .row-image {

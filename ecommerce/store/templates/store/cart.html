@@ -36,9 +36,9 @@
                     <div style="flex:1">
                         <p class="quantity" style="position:relative; bottom:10px">x{{item.quantity}}</p>
                         <div class="quantity" style="position:relative; bottom:5px"">
-                            <img src="{% static 'images/arrow-up.png' %}" alt="up" class="chg-quantity">
+                            <img src="{% static 'images/arrow-up.png' %}" data-product={{item.product.id}} data-action="add" alt="up" class="chg-quantity update-cart">
 
-                            <img src="{% static 'images/arrow-down.png' %}" alt="down" class="chg-quantity">
+                            <img src="{% static 'images/arrow-down.png' %}" data-product={{item.product.id}} data-action="remove" alt="down" class="chg-quantity update-cart">
                         </div>
                     </div>
                     <div style="flex:1"><strong>${{item.total_price|floatformat:2}}</strong></div>
